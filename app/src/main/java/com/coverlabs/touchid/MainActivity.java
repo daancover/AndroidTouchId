@@ -30,7 +30,6 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
 public class MainActivity extends AppCompatActivity {
-
     // Declare a string variable for the key we’re going to use in our fingerprint authentication
     private static final String KEY_NAME = "yourKey";
     private Cipher cipher;
@@ -127,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
             //Generate the key//
             keyGenerator.generateKey();
-
         } catch (KeyStoreException
                 | NoSuchAlgorithmException
                 | NoSuchProviderException
@@ -148,8 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     KeyProperties.KEY_ALGORITHM_AES + "/"
                             + KeyProperties.BLOCK_MODE_CBC + "/"
                             + KeyProperties.ENCRYPTION_PADDING_PKCS7);
-        } catch (NoSuchAlgorithmException |
-                NoSuchPaddingException e) {
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
             throw new RuntimeException("Failed to get Cipher", e);
         }
 
